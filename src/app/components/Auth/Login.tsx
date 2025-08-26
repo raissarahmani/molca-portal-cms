@@ -8,7 +8,7 @@ function Login() {
         <label htmlFor="email" className='label-form'>Email address</label>
         <input type="email" placeholder='enter your email...' className='input mb-5' />
         <label htmlFor="password" className='label-form'>Password</label>
-        <div className='flex flex-row items-center justify-between input mb-1'>
+        <div className='flex flex-row items-center justify-between input'>
             <input type="password" placeholder='enter your password...' className='input-form' />
             <Image 
               src="/icon.svg"
@@ -17,10 +17,10 @@ function Login() {
               height={20} 
             />
         </div>
-        <div className='font-[var(--font-dmsans)] text-[#CBD5E1] text-xs text-right'>Forgot password?</div>
+        <div className='font-[var(--font-dmsans)] text-[#CBD5E1] text-xs text-right cursor-pointer'>Forgot password?</div>
         <button type='submit' className='bg-[var(--color-primary)] text-[var(--color-base)] button'>Login</button>
       </form>
-      <div className='text-center text-sm'>or <span className='text-[var(--color-primary)]'>Login as Guest</span></div>
+      <div className='text-center text-sm'>or <span className='text-[var(--color-primary)] cursor-pointer'>Login as Guest</span></div>
     </div>
   )
 }
