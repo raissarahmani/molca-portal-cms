@@ -1,6 +1,50 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-base: rgba(17, 24, 28, 1);
+  --color-primary: rgba(207, 255, 51, 1);
+  --color-text: rgba(248, 250, 252, 1);
+  --color-logo: rgba(115, 115, 115, 1);
+  --color-red: rgba(239, 68, 68, 1);
+}
+
+@layer base {
+  :root {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-base);
+    color: var(--color-text);
+  }
+
+  .loader {
+    width: 120px;
+    height: 5px;
+    background:
+     linear-gradient(#ddd 0 0) 0/0% no-repeat
+     #000;
+    animation: l1 2s infinite linear;
+  }
+  @keyframes l1 {
+      100% {background-size:100%}
+  }
+}
+
+@layer components {
+  .logo {
+    color: var(--color-logo);
+    font-family: var(--font-inter), sans-serif;
+  }
+  .label-form {
+    font-family: var(--font-dmsans), sans-serif;
+    @apply text-sm text-[var(--color-text)] my-1
+  }
+  .input {
+    @apply border rounded-md py-2 px-3 w-full cursor-pointer
+  }
+  .input-form {
+    @apply border-none outline-none p-0 mr-1 cursor-pointer
+  }
+  .button {
+    @apply rounded-md p-2 my-5 text-sm font-semibold cursor-pointer
+  }
 }
