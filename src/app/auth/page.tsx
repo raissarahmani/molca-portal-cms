@@ -3,7 +3,7 @@ import Option from '@/app/components/Auth/Option'
 
 export default function AuthPage() {
   return (
-    <div className='absolute flex flex-col inset-0 items-center justify-center gap-2'>
+    <div className='absolute flex flex-col inset-x-0 bottom-0 top-10 items-center justify-center gap-2'>
       <Login />
       <Option />
     </div>
