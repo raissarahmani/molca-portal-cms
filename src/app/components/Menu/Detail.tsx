@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from 'next/link'
 
 type CardProps = {
   image: string;
@@ -9,20 +8,19 @@ type CardProps = {
 
 function Card({ image, title, description }: CardProps) {
   return (
-    <Link href="/detail" className="relative rounded-xl overflow-hidden flex flex-col hover:scale-105 transition-transform cursor-pointer">
+    <div className="rounded-md overflow-hidden flex flex-col items-center justify-center w-1/4 hover:scale-105 transition-transform cursor-pointer">
       <Image 
         src={image}
         alt={title} 
-        width={200}
-        height={500}
+        width={300}
+        height={150}
         className="object-cover z-0"
       />
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
-      <div className="flex flex-col gap-2 z-20 absolute bottom-5 left-5 right-5">
-        <div className="font-[var(--font-inter)] font-extrabold text-2xl text-white">{title}</div>
-        <div className="font-[var(--font-inter)] font-extrabold text-2xl text-white">{description}</div>
+      <div className="flex flex-col flex-wrap items-center justify-center gap-5 my-5">
+        <div className="font-[var(--font-inter)] font-bold text-lg text-[#D4D4D8]">{title}</div>
+        <div className="font-[var(--font-inter)] text-sm text-[#A1A1AA] text-center">{description}</div>
       </div>
-    </Link>
+    </div>
   );
 }
 
