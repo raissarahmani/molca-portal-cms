@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-function Login() {
+export default function Login() {
   return (
     <div className='bg-[#231F20] rounded-3xl p-10 w-[50vw]'>
       <div className='text-[#F8FAFC] font-[var(--font-dmsans)] font-semibold text-4xl text-center'>Log in</div>
@@ -24,5 +24,3 @@ function Login() {
     </div>
   )
 }
-
-export default Login
