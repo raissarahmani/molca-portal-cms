@@ -1,30 +1,31 @@
+"use client"
+
 import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
-import Loader from '@/app/components/Loader'
+import Loader from "@/app/components/Loader"
+import Auth from "@/app/components/Auth/Login"
+import Menu from "@/app/menu/page"
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true)
-  const router = useRouter()
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean | null>(null)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const isLoggedIn = false // replace with real token check later
-      
-      if (isLoggedIn) {
-        router.push("/menu")
-      } else {
-        router.push("/auth")
-      }
-      
-      setLoading(false);
+      const token = null; // replace with real token check
+      setIsLoggedIn(!!token)
+      setLoading(false)
     }, 1500)
 
     return () => clearTimeout(timer)
-  }, [router])
+  }, [])
 
   if (loading) {
-    return <Loader />
+    return <Loader />;
   }
 
-  return null
+  if (!isLoggedIn) {
+    return <Auth />;
+  }
+
+  return <Menu />;
 }

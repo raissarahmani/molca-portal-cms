@@ -37,7 +37,7 @@ export default function RootLayout({
       <body className='flex flex-col h-screen w-full p-10 gap-5 relative'>
         <Header />
         <div
-          className="flex h-screen w-3/4 flex-col items-center justify-center"
+          className="flex h-screen w-3/4 flex-col items-center justify-center z-0"
           style={{
               backgroundImage: `url('/bg.png')`, 
               backgroundSize: 'cover', 
@@ -46,7 +46,7 @@ export default function RootLayout({
           }}
         ></div>
         <div
-          className="flex h-screen w-3/4 flex-col items-end relative left-1/4"
+          className="flex h-screen w-3/4 flex-col items-end relative left-1/4 z-0"
           style={{
               backgroundImage: `url('/bg.png')`, 
               backgroundSize: 'cover', 
@@ -54,9 +54,10 @@ export default function RootLayout({
               backgroundPosition: 'center'
           }}
         ></div>
-        {children}
+        <div className="absolute inset-x-0 bottom-0 top-10 flex items-center justify-center z-10">
+          {children}
+        </div>
       </body>
     </html>
   );
 }
-
