@@ -5,7 +5,7 @@ import Reset from '@/app/components/Demo/Reset'
 
 export default function Demo() {
   return (
-    <div>
+    <div className='cursor-grab active:cursor-grabbing'>
       <Image 
         src="/factory.png"
         alt="" 
