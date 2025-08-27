@@ -13,7 +13,7 @@ function Card({ image, number, title }: CardProps) {
       <Image 
         src={image}
         alt={title} 
-        width={250}
+        width={300}
         height={400}
         className="object-cover z-0"
       />

@@ -3,8 +3,6 @@ import "@/styles/globals.css";
 import { type Metadata } from "next";
 import { Inter, DM_Sans, Orbitron } from "next/font/google";
 
-import Header from '@/app/components/Header'
-
 export const metadata: Metadata = {
   title: "Portal - Molca",
   description: "Portal for Molca",
@@ -35,7 +33,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${dmsans.variable} ${orbitron.variable}`}>
       <body className='flex flex-col h-screen w-full p-10 gap-5 relative'>
-        <Header />
         <div
           className="flex h-screen w-3/4 flex-col items-center justify-center z-0"
           style={{
@@ -54,7 +51,7 @@ export default function RootLayout({
               backgroundPosition: 'center'
           }}
         ></div>
-        <div className="absolute inset-x-0 bottom-0 top-10 flex items-center justify-center z-10">
+        <div className="absolute inset-0 z-10">
           {children}
         </div>
       </body>
