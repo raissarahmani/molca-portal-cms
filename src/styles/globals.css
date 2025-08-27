@@ -39,12 +39,16 @@
     @apply text-sm text-[var(--color-text)] my-1
   }
   .input {
-    @apply border rounded-md py-2 px-3 w-full cursor-pointer
+    @apply border rounded-md py-2 px-3 my-1 w-full text-sm cursor-pointer
   }
   .input-form {
-    @apply border-none outline-none p-0 mr-1 cursor-pointer
+    @apply border-none outline-none p-0 mr-1 text-sm cursor-pointer
   }
   .button {
-    @apply rounded-md p-2 my-5 text-sm font-semibold cursor-pointer
+    font-family: var(--font-dmsans), sans-serif;
+    @apply rounded-md p-2 my-5 text-sm font-semibold hover:scale-105 cursor-pointer
+  }
+  .product-card {
+    font-family: var(--font-orbitron), sans-serif;
   }
 }
