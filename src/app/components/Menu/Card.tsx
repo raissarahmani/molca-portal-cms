@@ -5,11 +5,12 @@ type CardProps = {
   image: string;
   number: string;
   title: string;
+  link: string;
 };
 
-function Card({ image, number, title }: CardProps) {
+function Card({ image, number, title, link }: CardProps) {
   return (
-    <Link href="/menu/detail" className="relative rounded-xl overflow-hidden flex flex-col hover:scale-105 transition-transform cursor-pointer">
+    <Link href={link} className="relative rounded-xl overflow-hidden flex flex-col hover:scale-105 transition-transform cursor-pointer">
       <Image 
         src={image}
         alt={title} 

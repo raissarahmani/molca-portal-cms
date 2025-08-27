@@ -8,16 +8,19 @@ export default function Menu() {
       image: "/image.png",
       number: "01",
       title: "Molca Digital Twin",
+      link: "/digitaltwin"
     },
     {
       image: "/image.png",
       number: "02",
       title: "Assembly-Disassembly",
+      link: ""
     },
     {
       image: "/image.png",
       number: "03",
       title: "ROCE Calculator",
+      link: "/roce"
     },
   ];
 
@@ -34,6 +37,7 @@ export default function Menu() {
                 image={card.image}
                 number={card.number}
                 title={card.title}
+                link={card.link}
               />
             ))}
           </div>
