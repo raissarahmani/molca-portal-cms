@@ -7,11 +7,13 @@ function Status() {
   const [showStatus, setShowStatus] = useState(false)
 
   return (
-    <div className='w-1/3 relative'>
+    <div className='w-1/3 relative flex items-start'>
       <button 
         type="button" 
-        onClick={() => setShowStatus(true)}
-        className='bg-[var(--color-primary)] rounded-lg p-2 w-8 cursor-pointer'>
+        onClick={() => setShowStatus(!showStatus)}
+        className={`bg-[var(--color-primary)] rounded-lg p-2 cursor-pointer z-10 transition-transform duration-500 ease-in-out
+          ${showStatus ? "translate-x-105" : "translate-x-0"}`}
+      >
         <Image 
           src="/home.svg"
           alt="Status" 
@@ -19,12 +21,12 @@ function Status() {
           height={20} 
         />
       </button>
-
-      {showStatus && 
-        <div className={`absolute inset-0 flex items-center transition-all duration-500 ease-in-out ${showStatus === true ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}>
-          <StatusBar setShowStatus={setShowStatus} />
-        </div>
-      }
+      
+      <div className={`absolute top-0 left-0 h-full w-full transition-transform duration-500 ease-in-out 
+          ${showStatus ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"}`}
+      >
+        <StatusBar setShowStatus={setShowStatus} />
+      </div>
     </div>
   )
 }

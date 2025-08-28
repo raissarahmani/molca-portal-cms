@@ -8,7 +8,7 @@ interface StatusModalProps {
 }
 
 export default function StatusBar({ setShowStatus }: StatusModalProps) {
-    const [isActive, setIsActive] = useState<"information" | "parameter" | null>(null)
+    const [isActive, setIsActive] = useState<"information" | "parameter">("parameter")
 
     const status = [
         { type: "Counter", image: "/counter.svg", value: "900 pcs", color: "#231F20" },
@@ -72,13 +72,19 @@ export default function StatusBar({ setShowStatus }: StatusModalProps) {
 
                 {isActive === "parameter" &&
                     <>
-                        <div className="flex flex-col gap-1 border-b py-2">
+                        <div className="flex flex-col gap-1 border-b pb-2">
                             <div className="text-sm">Status</div>
                             <div className="text-[#75EDAE] text-xs font-semibold">• Running</div>
                         </div>
                         <div className="flex flex-col gap-1 border-b py-2">
                             <div className="text-sm">Efficiency</div>
                             <div className="font-bold">30%</div>
+                            <div className="w-full bg-[var(--color-text)] rounded-full h-2 overflow-hidden">
+                                <div
+                                  className="bg-[var(--color-primary)] rounded-full h-full transition-transform duration-500 ease-in-out shadow-md"
+                                  style={{ width: "30%" }}
+                                />
+                            </div>
                         </div>
                         <div className="flex flex-col gap-1 border-b py-2">
                             <div className="text-sm">Downtime Line</div>

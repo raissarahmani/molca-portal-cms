@@ -2,11 +2,11 @@
 import { useState, useRef, useEffect } from "react"
 import Image from 'next/image'
 
-interface SearchModalProps {
-  setIsActive: React.Dispatch<React.SetStateAction<"production" | "search" | null>>
+type SearchProps = {
+  setActiveTab: React.Dispatch<React.SetStateAction<"status" | "production" | "search" | null>>
 }
 
-export default function SearchModal({ setIsActive }: SearchModalProps) {
+export default function SearchModal({ setActiveTab }: SearchProps) {
   const [query, setQuery] = useState("")
   const [openDropdown, setOpenDropdown] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)
@@ -25,12 +25,12 @@ export default function SearchModal({ setIsActive }: SearchModalProps) {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-        setIsActive(null)
+        setActiveTab(null)
       }
     }
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [setIsActive])
+  }, [setActiveTab])
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
